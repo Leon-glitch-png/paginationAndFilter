@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}All Names{% endblock %}
+
+{% block content %}
+
+<div class="max-w-6xl mx-auto">
+
+    <h1 class="text-2xl font-semibold text-gray-800 mb-6">
+        All Names
+    </h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for name in names %}
+            <div class="bg-white rounded-xl shadow-sm p-4
+                        hover:shadow-md transition
+                        flex items-center justify-center">
+                <span class="text-gray-700 font-medium">
+                    {{ name }}
+                </span>
+            </div>
+        {% empty %}
+            <p class="text-gray-500 col-span-full text-center">
+                No names available
+            </p>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

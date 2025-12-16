@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+List page
+{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    {% for image in images %}
+    
+        <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <img src="{{ image.image.url }}" 
+                 alt="photo" 
+                 class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
